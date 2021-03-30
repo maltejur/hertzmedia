@@ -65,3 +65,12 @@ export async function createPost(
     }
   );
 }
+
+export async function createUser(
+  username: string,
+  password: string,
+  classname: string
+) {
+  await axios.post("users/create", { username, password, classname });
+  return loginpermanent(username, password);
+}

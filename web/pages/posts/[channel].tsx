@@ -52,6 +52,7 @@ export default function Posts({
   }
 
   useEffect(() => {
+    console.log(atob(initialPosts[0].file));
     window.addEventListener("scroll", tryAddNewPosts);
     return () => window.removeEventListener("scroll", tryAddNewPosts);
   });
