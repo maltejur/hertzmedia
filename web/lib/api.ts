@@ -3,6 +3,8 @@ import { Post } from "./types";
 
 if (process.browser) {
   axios.defaults.baseURL = `http://${window.location.hostname}:5000/`;
+} else if (process.env.API_HOST) {
+  axios.defaults.baseURL = `http://${process.env.API_HOST}:5000/`;
 } else {
   axios.defaults.baseURL = `http://localhost:5000/`;
 }
