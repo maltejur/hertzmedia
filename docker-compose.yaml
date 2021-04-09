@@ -8,6 +8,7 @@ services:
       - 3000:3000
     environment:
       API_HOST: api
+    restart: always
   api:
     build: api
     links:
@@ -16,6 +17,7 @@ services:
       - db
     ports:
       - 5000:5000
+    restart: always
   db:
     image: mysql
     environment:
@@ -27,3 +29,4 @@ services:
       - 3307:3306
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
+    restart: always
